@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Coord" representedClassName="Coord" syncable="YES">
+        <attribute name="c_lat" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="c_long" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="c_result" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Result" inverseName="r_coord" inverseEntity="Result" syncable="YES"/>
+    </entity>
+    <entity name="Mainn" representedClassName="Mainn" syncable="YES">
+        <attribute name="m_humidity" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="m_pressure" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="m_temp" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="m_temp_max" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="m_temp_min" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="m_result" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Result" inverseName="r_main" inverseEntity="Result" syncable="YES"/>
+    </entity>
+    <entity name="Result" representedClassName="Result" syncable="YES">
+        <attribute name="r_base" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="r_cod" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="r_dt" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="r_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="r_name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="r_coord" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Coord" inverseName="c_result" inverseEntity="Coord" syncable="YES"/>
+        <relationship name="r_main" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Mainn" inverseName="m_result" inverseEntity="Mainn" syncable="YES"/>
+        <relationship name="r_sys" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sys" inverseName="s_result" inverseEntity="Sys" syncable="YES"/>
+        <relationship name="r_weather" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Weather" inverseName="w_result" inverseEntity="Weather" syncable="YES"/>
+        <relationship name="r_wind" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Wind" inverseName="wi_result" inverseEntity="Wind" syncable="YES"/>
+    </entity>
+    <entity name="Sys" representedClassName="Sys" syncable="YES">
+        <attribute name="s_country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="s_sunrise" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="s_sunset" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="s_result" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Result" inverseName="r_sys" inverseEntity="Result" syncable="YES"/>
+    </entity>
+    <entity name="Weather" representedClassName="Weather" syncable="YES">
+        <attribute name="w_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="w_icon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="w_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="w_main" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="w_result" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Result" inverseName="r_weather" inverseEntity="Result" syncable="YES"/>
+    </entity>
+    <entity name="Wind" representedClassName="Wind" syncable="YES">
+        <attribute name="wi_deg" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="wi_gust" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="wi_speed" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="wi_result" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Result" inverseName="r_wind" inverseEntity="Result" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Result" positionX="-2018" positionY="-639" width="128" height="193"/>
+        <element name="Coord" positionX="-2277" positionY="-531" width="128" height="88"/>
+        <element name="Mainn" positionX="-2259" positionY="-304" width="128" height="133"/>
+        <element name="Sys" positionX="-2025" positionY="-292" width="128" height="103"/>
+        <element name="Weather" positionX="-1802" positionY="-316" width="128" height="118"/>
+        <element name="Wind" positionX="-1712" positionY="-504" width="128" height="103"/>
+    </elements>
+</model>

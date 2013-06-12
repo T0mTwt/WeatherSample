@@ -11,4 +11,15 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+
+    #import <RestKit/RestKit.h>
+
+    #import "CoreData+MagicalRecord.h"
+
+#import "Wind.h"
+#import "Sys.h"
+#import "Weather.h"
+#import "Coord.h"
+#import "Mainn.h"
+#import "Result.h"
 #endif
